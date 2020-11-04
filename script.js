@@ -21,7 +21,7 @@ const showCountries = async() => {
                 <img class="country-flag" src="${country.flag}" />
                 <h3 class="country-name"> ${country.name} </h3>
                 <div class="country-info">
-                    <h2 class="country-population"> ${country.population} </h2>
+                    <h2 class="country-population"> ${numberFilter(country.population)} </h2>
                     <h5 class="country-population-text"> Habitants</h5>
                 </div>
             </li>
@@ -30,3 +30,7 @@ const showCountries = async() => {
     );
 }
 showCountries();
+
+function numberFilter(x){
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
